@@ -3,6 +3,7 @@ FROM python:3.7-stretch
 WORKDIR /tmp
 
 ADD files/apt-transport-https_1.4.8_amd64.deb /tmp
+ADD Pipfile /tmp
 
 RUN echo 'Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/02update &&\
     echo 'Acquire::http::Timeout "10";' > /etc/apt/apt.conf.d/99timeout &&\
@@ -25,3 +26,5 @@ RUN pip install --upgrade pip setuptools
 
 # Install core python packages
 RUN pip install pipenv
+
+RUN pipenv install

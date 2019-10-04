@@ -7,4 +7,3 @@ services:
 
 script:
   - docker build -f Dockerfile -t pipenv-pyspark:0.1 .
-  - pipenv install
