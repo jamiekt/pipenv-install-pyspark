@@ -27,4 +27,3 @@ RUN pip install --upgrade pip setuptools
 # Install core python packages
 RUN pip install pipenv
 
-RUN pipenv install --verbose
